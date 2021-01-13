@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="ipjson" format="json">
+      <types:shape format="weave" example="ipjson.json"><![CDATA[%dw 2.0
+
+type ipjson = {|
+  date: String, 
+  nativeId: String, 
+  customerNumber: String, 
+  products: Array<{|    name: String,     description: String,     index: String,     code: String,     quantity: String  |}>
+|} {"example": "{\\\"date\\\":\\\"2019-03-23\\\",\\\"nativeId\\\":\\\"0062000000j4mJ7AAY\\\",\\\"customerNumber\\\":\\\"0062000000j4mJ7AAI\\\",\\\"products\\\":[{\\\"name\\\":\\\"M-01\\\",\\\"description\\\":\\\"Retail material\\\",\\\"index\\\":\\\"1234\\\",\\\"code\\\":\\\"MXT-123\\\",\\\"quantity\\\":\\\"10.0\\\"},{\\\"name\\\":\\\"M-02\\\",\\\"description\\\":\\\"Retail material\\\",\\\"index\\\":\\\"1255\\\",\\\"code\\\":\\\"MXT-555\\\",\\\"quantity\\\":\\\"15.0\\\"}]}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#d8bee069-ec05-439e-bd42-569fec33c9d1">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ipjson"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#70f20bf3-393c-4632-ac06-8d3213f6b156">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="ipjson"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

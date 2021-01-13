@@ -1,0 +1,21 @@
+{
+  "date": "2019-03-23",
+  "nativeId": "0062000000j4mJ7AAY",
+  "customerNumber": "0062000000j4mJ7AAI",
+  "products": [
+    {
+      "name": "M-01",
+      "description": "Retail material",
+      "index": "1234",
+      "code": "MXT-123",
+      "quantity": "10.0"
+    },
+    {
+      "name": "M-02",
+      "description": "Retail material",
+      "index": "1255",
+      "code": "MXT-555",
+      "quantity": "15.0"
+    }
+  ]
+}
